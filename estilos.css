@@ -1,0 +1,250 @@
+:root {
+    --color-1: oklch(69.91% 0.24 293.23);
+    --color-2: oklch(70.7% 0.203 345.22);
+}
+
+body {
+    padding-top: 200px;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, var(--color-1), var(--color-2));
+    background-size: 2000% 2000%;
+    background-repeat: repeat;
+    animation: bg 7.5s ease-in-out infinite reverse;
+}
+
+@keyframes bg {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.site-header {
+    background-color: #8c52fe;
+    color: white;
+    padding: 0 0px;
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    left: 0;
+    box-shadow: 0 2px 4px 5px rgba(139, 82, 254, 0.226);
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    z-index: 1000;
+    animation: slideRight 0.4s ease-in-out;
+}
+
+@keyframes slideRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10 auto;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .image-container {
+    display: inline-block;
+    right:100px;
+    width: 35%; /* Ancho de la imagen */
+    height: 35%; /* Alto de la imagen */
+
+}
+
+.image-container img {
+    width: 75%;
+    height: 100%;
+    object-fit: fill; /* Ajusta la imagen al contenedor */
+
+}
+
+.site-header nav ul {
+    list-style-type: none;
+    padding: 1% 1% 0% 10%;
+    margin: 1% 0% 0%;
+    display: flex;
+
+}
+
+.site-header nav ul li {
+    margin: 0 50px;
+    text-align: center;
+
+}
+
+.site-header nav ul li a {
+    color: white;
+    font-size: 175%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+
+}
+
+.site-header nav ul li a:hover {
+    color: #e471c8;
+   
+    text-decoration: solid underline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+
+
+.page, :target ~ .default {
+    display: none;
+}
+
+.default, :target {
+    display: contents;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .textoContenedor{
+    background-color: rgba(0, 0, 0, 0.322);
+    width: 100vw;
+    height: 25%;
+    margin-top: -40%;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: slideInFromBottom 1.5s ease-in-out;
+  }
+
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+.texto{
+    user-select: none;
+    color:white;
+    font-size: 43px;
+    position:relative;
+    top:-50px;
+    right:85px; 
+    animation: fadeIn 2.5s ease-in-out;
+    text-align: center;
+}
+
+.imagen-lista-contenedor {
+  position: relative;
+  top: 580vh; /* o padding-top: 100vh; */
+}
+
+.imagen-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagen-lista li {
+  margin: 10px;
+  opacity: 0;
+  transition: opacity 5.5s;
+}
+
+.imagen-lista li.enfocado {
+  opacity: 1;
+}
+
+.imagen-lista img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+.accordion {
+  width: 1000px;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: #f04a9d;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+}
+
+.elemento {
+  margin-bottom: 10px;
+}
+
+.elemento h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.elemento h2:hover{
+
+  color: #8400ff;
+}
+
+.contenido {
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  position:relative;
+  font-size: 19px;
+}
+
+.activo {
+  display: block;
+}
