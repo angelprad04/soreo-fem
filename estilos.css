@@ -4,12 +4,14 @@
 }
 
 body {
-    padding-top: 200px;
-    min-height: 100vh;
+    padding-top: 100px;
+    min-height: calc(100vh - 100px);
     background: linear-gradient(-45deg, var(--color-1), var(--color-2));
     background-size: 2000% 2000%;
     background-repeat: repeat;
     animation: bg 7.5s ease-in-out infinite reverse;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes bg {
@@ -30,7 +32,7 @@ body {
     background-color: #8c52fe;
     color: white;
     padding: 0 0px;
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0%;
     left: 0;
@@ -41,7 +43,9 @@ body {
     align-items: center;
     /* Centra verticalmente */
     z-index: 1000;
+    margin-top:auto;
     animation: slideRight 0.4s ease-in-out;
+    height: 155px;
 }
 
 @keyframes slideRight {
@@ -77,7 +81,7 @@ body {
     right:100px;
     width: 35%; /* Ancho de la imagen */
     height: 35%; /* Alto de la imagen */
-
+    position:static;
 }
 
 .image-container img {
@@ -133,14 +137,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding-top: calc(100vh + 100%); /* alto del header */
   }
 
   .textoContenedor{
     background-color: rgba(0, 0, 0, 0.322);
     width: 100vw;
-    height: 25%;
-    margin-top: -40%;
-    padding: 20px;
+    height: 25vh;
+    margin-top: -0%;
+    margin-left: 50%;
+    margin-right: 50%;
+    padding: -10%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -149,6 +156,103 @@ body {
     animation: slideInFromBottom 1.5s ease-in-out;
   }
 
+  
+  
+
+/* Pantallas pequeñas (teléfonos móviles) */
+@media (max-device-width: 320px) {
+  #texto2 {
+    font-size: 40px;
+    text-align: center;
+  }
+  #textoContenedor {
+    top:1000px;
+  }
+
+  #textoContenedor1 {
+    top:650px;
+  }
+  .imagen-lista-contenedor {
+    position: relative;
+    top:3450px;
+  }
+}
+
+/* Pantallas pequeñas-medias (375px) */
+@media (min-device-width: 321px) and (max-device-width: 375px) {
+  .imagen-lista-contenedor {
+    position: relative;
+    top:3620px;
+  }
+}
+/* Pantallas medias (425px) */
+@media (min-device-width: 376px) and (max-device-width: 425px) {
+ 
+  .imagen-lista-contenedor {
+    position: relative;
+    top:3680px;
+  }
+}
+
+/* Pantallas grandes (768px) */
+@media (min-device-width: 426px) and (max-device-width: 768px) {
+  .imagen-lista-contenedor {
+    position: relative;
+    top:3995px;
+  }
+}
+
+/* Pantallas extra grandes (1024px) */
+@media (min-device-width: 769px) and (max-device-width: 1024px) {
+  .imagen-lista-contenedor {
+    position: relative;
+    top:4330px;
+  }
+}
+
+/* Pantallas muy grandes (mayores a 1024px) */
+@media (min-device-width: 1025px) {
+  .imagen-lista-contenedor {
+    position: relative;
+    top:5350px;
+  }
+}
+
+/* Pantallas grandes (ordenadores de escritorio) */
+@media (769px <= width <= 1024px) {
+  #textoContenedor1 {
+    margin-top:250px;
+    height: auto;
+  }
+  #textoContenedor {
+    height: auto;
+    margin-top:-500px;
+  }
+
+
+  #texto2 {
+
+    text-align: center;
+    margin-right:-100px;
+  }
+
+}
+
+/* Pantallas muy grandes (pantallas de alta resolución) */
+@media (1025px <= width) {
+  #textoContenedor1 {
+    margin-top:-100px;
+  }
+
+  #textoContenedor {
+    margin-top:-700px;
+  }
+  #texto2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+}
   @keyframes slideInFromBottom {
     0% {
       transform: translateY(100%);
@@ -174,7 +278,7 @@ body {
 
 .imagen-lista-contenedor {
   position: relative;
-  top: 580vh; /* o padding-top: 100vh; */
+  min-height: 155vh;
 }
 
 .imagen-lista {
@@ -200,7 +304,6 @@ body {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
   border: 1px solid #ddd;
   padding: 5px;
