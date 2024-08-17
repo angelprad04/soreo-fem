@@ -176,6 +176,12 @@ body {
     position: relative;
     top:2500px;
   }
+
+  .accordion{
+    position:relative;
+    top:-1100px;
+  }
+
 }
 
 /* Pantallas pequeñas-medias (375px) */
@@ -199,6 +205,10 @@ body {
   .imagen-lista-contenedor {
     position: relative;
     top:2150px;
+  }
+  .accordion{
+    position:relative;
+    top:-1710px;
   }
 }
 
@@ -248,6 +258,10 @@ body {
     .imagen-lista-contenedor {
       position: relative;
       top:2850px;
+    }
+    .accordion{
+      position:relative;
+      top:-2800px;
     }
 
 }
